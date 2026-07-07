@@ -39,11 +39,11 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>8.4.2</version>
+                <version>9.0.0</version>
                 <configuration>
                     <format>JSON</format>
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
-                    <offline>true</offline>  <!-- 🆕 Mode offline -->
+                    <nvdApiKey>24284F2F-E479-F111-836F-0EBF96DE670D</nvdApiKey>
                 </configuration>
                 <executions>
                     <execution>
