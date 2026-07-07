@@ -44,7 +44,8 @@
                     <format>JSON</format>
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
                     <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
-                    <nvdApiDelay>2000</nvdApiDelay>
+                    <nvdApiDelay>4000</nvdApiDelay>
+                    <nvdMaxRetryCount>10</nvdMaxRetryCount>
                 </configuration>
                 <executions>
                     <execution>
