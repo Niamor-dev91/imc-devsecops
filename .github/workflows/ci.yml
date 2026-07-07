@@ -1,0 +1,29 @@
+name: CI - Build & Test
+
+# Quand déclencher la pipeline ?
+on:
+  push:
+    branches: [ "main", "feature/devsecops-pipeline" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest   # GitHub fournit une machine Linux gratuite
+
+    steps:
+      # 1. Récupérer le code du repo
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      # 2. Installer Java (JDK 17)
+      - name: Configurer JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # 3. Compiler et lancer les tests
+      - name: Build & Test avec Maven
+        run: mvn --batch-mode clean verify
