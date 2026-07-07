@@ -43,6 +43,7 @@
                 <configuration>
                     <format>JSON</format>
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
+                    <offline>true</offline>  <!-- 🆕 Mode offline -->
                 </configuration>
                 <executions>
                     <execution>
