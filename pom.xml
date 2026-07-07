@@ -43,7 +43,8 @@
                 <configuration>
                     <format>JSON</format>
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
-                    <nvdApiKey>24284F2F-E479-F111-836F-0EBF96DE670D</nvdApiKey>
+                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                    <autoUpdate>false</autoUpdate>
                 </configuration>
                 <executions>
                     <execution>

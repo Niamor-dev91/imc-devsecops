@@ -10,7 +10,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest   # GitHub fournit une machine Linux gratuite
-
+    env:
+      NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
     steps:
       # 1. Récupérer le code du repo
       - name: Checkout du code
