@@ -24,6 +24,14 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # 3. Compiler et lancer les tests
+      # 3. Mettre en cache la base de données NVD (OWASP Dependency-Check)
+      - name: Cache NVD Database
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository/org/owasp/dependency-check-data
+          key: nvd-cache-${{ runner.os }}
+          restore-keys: nvd-cache-${{ runner.os }}
+
+      # 4. Compiler, tester et analyser les dépendances
       - name: Build & Test avec Maven
         run: mvn --batch-mode clean verify
