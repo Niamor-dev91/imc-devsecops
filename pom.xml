@@ -39,7 +39,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>9.0.0</version>
+                <version>8.4.2</version>
                 <configuration>
                     <format>JSON</format>
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
