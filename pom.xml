@@ -45,7 +45,7 @@
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
                     <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
                 </configuration>
-                <executions>s
+                <executions>
                     <execution>
                         <goals>
                             <goal>aggregate</goal>
