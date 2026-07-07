@@ -39,11 +39,12 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>8.4.2</version>
+                <version>12.2.2</version>
                 <configuration>
                     <format>JSON</format>
                     <failBuildOnCVSS>7.0</failBuildOnCVSS>
                     <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                    <nvdApiDelay>2000</nvdApiDelay>
                 </configuration>
                 <executions>
                     <execution>
