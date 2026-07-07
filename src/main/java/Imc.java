@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Imc {
@@ -32,14 +33,36 @@ public class Imc {
     static double getTailleCm(Scanner scanner) {
         // 2. Demander la taille
         System.out.print("Quelle est votre taille (en cm) ? ");
-        return scanner.nextDouble();
+        try {
+            double taille = scanner.nextDouble();
+            // On vérifie que la taille est cohérente (pas négative, pas nulle)
+            if (taille <= 0) {
+                throw new IllegalArgumentException("La taille doit être un nombre positif.");
+            }
+            return taille;
+        } catch (InputMismatchException e) {
+            // La saisie n'est pas un nombre (ex: "abc")
+            throw new IllegalArgumentException("La taille saisie n'est pas un nombre valide.", e);
+        }
     }
+
 
     static double getPoids(Scanner scanner) {
         // 1. Demander le poids
         System.out.print("Quel est votre poids (en kg) ? ");
-        return scanner.nextDouble();
+        try {
+            double poids = scanner.nextDouble();
+            // On vérifie aussi que le poids est cohérent (pas négatif, pas nul)
+            if (poids <= 0) {
+                throw new IllegalArgumentException("Le poids doit être un nombre positif.");
+            }
+            return poids;
+        } catch (InputMismatchException e) {
+            // La saisie n'est pas un nombre (ex: "abc")
+            throw new IllegalArgumentException("Le poids saisi n'est pas un nombre valide.", e);
+        }
     }
+
 
     static double parseMesure(String saisie) {
         return Double.parseDouble(saisie); // lève NumberFormatException si invalide
